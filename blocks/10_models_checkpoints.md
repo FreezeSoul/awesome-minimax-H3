@@ -324,7 +324,7 @@ Community hybrid of joeygambino's ZS05 INT8 checkpoints: **FL2VA base with REF2V
 
 #### Pruned Ref-Delta Fused r1024 (xmarre)
 
-Native ComfyUI single-file conversion of [`diffusers-modular/MiniMax-H3-Pruned-Ref-Delta-Fused-r1024`](https://huggingface.co/diffusers-modular/MiniMax-H3-Pruned-Ref-Delta-Fused-r1024) — a fused checkpoint carrying the Ref2VA delta LoRA at rank 1024 on the pruned base (see also ethanfel's unfused delta adapters in [LoRAs → Experimental](#lora)). Diffusion transformer only; use stock H3 TE + VAEs. INT8 variants keep all 50 MLP `fc2` layers BF16 to avoid fused-swiglu INT8 OOM; validated end-to-end in ComfyUI (Continuum/Spectrum/refine). MiniMax H3 Community License.
+Native ComfyUI single-file conversion of [`diffusers-modular/MiniMax-H3-Pruned-Ref-Delta-Fused-r1024`](https://huggingface.co/diffusers-modular/MiniMax-H3-Pruned-Ref-Delta-Fused-r1024) — a fused checkpoint carrying the Ref2VA delta LoRA at rank 1024 on the pruned base (see also ethanfel's unfused delta adapters in [LoRA → All LoRAs](#lora)). Diffusion transformer only; use stock H3 TE + VAEs. INT8 variants keep all 50 MLP `fc2` layers BF16 to avoid fused-swiglu INT8 OOM; validated end-to-end in ComfyUI (Continuum/Spectrum/refine). MiniMax H3 Community License.
 
 | Variant | Precision | Size | Download |
 | :--- | :---: | :---: | :--- |
