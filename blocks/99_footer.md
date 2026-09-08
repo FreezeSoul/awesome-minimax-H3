@@ -61,6 +61,7 @@
 [gh-TenStrip]: https://img.shields.io/badge/TenStrip-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-WarmBloodAban]: https://img.shields.io/badge/WarmBloodAban-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-silveroxides]: https://img.shields.io/badge/silveroxides-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-xtanqn]: https://img.shields.io/badge/xtanqn-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 
 [badge-bf16]: https://img.shields.io/badge/bf16-0077cc?style=flat-square
 [badge-fp16]: https://img.shields.io/badge/fp16-0077cc?style=flat-square

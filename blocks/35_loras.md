@@ -7,7 +7,7 @@
 * SexGod1979
   * [PinkFluffyBunny](https://huggingface.co/SexGod1979/PinkFluffyBunny-MiniMax-H3) - Pink fluffy bunny style LoRA in pruned + unpruned variants (rank 128/256/512). Maximum pink achieved at 0.5 strength on pruned int8 model. Alpha quality. (2.31 GB · pruned-v1 rank128)
   * [PinkCherry](https://huggingface.co/SexGod1979/PinkCherry_MiniMax-H3) - High-quality furry rabbits, rainbows, and cherry blossoms. No guardrails altered. Alpha v0.3 (pruned int8, 14 GB checkpoint). Iterated alpha 0.1→0.5.
-  * [NaughtyTimes](https://huggingface.co/SexGod1979/NaughtyTimes_MiniMax-H3) - NSFW style LoRA for MiniMax-H3.
+  * [NaughtyTimes](https://huggingface.co/SexGod1979/NaughtyTimes_MiniMax-H3) - ⚠️ **Contains explicit / NSFW content.** NSFW style LoRA for MiniMax-H3 FL2VA, now v3 (rank 64): trained on the **unpruned** base model with a 50/50 T2V/I2V mix — prefer the unpruned LoRA on the int8/bf16 unpruned base (the pruned variant strips the AdaLN projections the author specifically trained, so it is noticeably weaker). Apache-2.0. (568 MB pruned NOADALN · 1.15 GB unpruned)
 
 * ssjenforcer191
   * [Homelander](https://huggingface.co/ssjenforcer191/Homelander_Minimax_H3_experimental) - Character LoRA for The Boys' Homelander. Triggerword `HeroHomelander` (optionally append `wearing red leather gloves`). Experimental. (296 MB)
@@ -42,6 +42,8 @@
 * [Playtime-AI/Minimax_H3-Sasha_Grey](https://huggingface.co/Playtime-AI/Minimax_H3-Sasha_Grey) - Character LoRA of Sasha Grey (`MM-H3 - Sasha Grey.safetensors`, 148 MB). Same series as above; sample clip included, minimal card (Apache-2.0).
 * [Playtime-AI/Minimax_H3-Betty_Gilpin](https://huggingface.co/Playtime-AI/Minimax_H3-Betty_Gilpin) - Character LoRA of actress Betty Gilpin (`MM-H3 - Betty Gilpin.safetensors`, 148 MB). Same series as above; sample clip included, minimal card (Apache-2.0).
 * [Playtime-AI/Minimax_H3-Alan_Rickman](https://huggingface.co/Playtime-AI/Minimax_H3-Alan_Rickman) - Character LoRA of actor Alan Rickman (`MM-H3 - Alan Rickman v1.1.safetensors`, 148 MB). Same series as above; sample clip included, minimal card (Apache-2.0).
+* [Playtime-AI/Minimax_H3-Mia_Goth](https://huggingface.co/Playtime-AI/Minimax_H3-Mia_Goth) - Character LoRA of actress Mia Goth (`MM-H3 - Mia Goth.safetensors`, 148 MB). Same Playtime-AI series as above; sample clip included, minimal card (Apache-2.0).
+* [Playtime-AI/Minimax_H3-Ace_Ventura](https://huggingface.co/Playtime-AI/Minimax_H3-Ace_Ventura) - Character LoRA of Jim Carrey's Ace Ventura (`MM-H3 - Ace Ventura.safetensors`, 148 MB). Same series as above; sample clip included, minimal card (Apache-2.0).
 
 * JOKER141
   * [MiniMax-H3-Combat-Base-V2](https://huggingface.co/JOKER141/MiniMax-H3-Combat-Base-V2) - **Combat / action base v2** — combat, action, and dialogue motion LoRA for H3 (`H3_Combat_V2.safetensors`, 155 MB pruned). Ships 2 workflow JSONs.
@@ -97,6 +99,8 @@
   * [better-human-motion-h3-lora](https://huggingface.co/vpakarinen/better-human-motion-h3-lora) - **Better human motion** — motion-quality LoRA for MiniMax-H3 improving the naturalness and coherence of human movement (gait, gesture, weight shift). Trained at 720×1280; strength 0.4–0.8, 15–30 steps; demo clip in the repo. (`better_motion_h3_lora_v1_500.safetensors`, 296 MB)
 
 * [rzgar/minimax-h3_fl2v_8Step_motion_enhancer](https://huggingface.co/rzgar/minimax-h3_fl2v_8Step_motion_enhancer) - ⚠️ **Contains explicit / NSFW content.** **FL2VA 8-step motion enhancer** — anatomy / motion enhancer LoRA built on LightX2V's 8-step distilled FL2VA; amplifies motion intensity and anatomical detail at low step counts. NSFW-oriented. (1.96 GB)
+
+* [TenStrip/Minimax-h3_Singularity-Lora](https://huggingface.co/TenStrip/Minimax-h3_Singularity-Lora) - **Singularity extraction (unofficial)** — LoRA extract of WarmBloodAban's [Singularity](https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity) hybrid-pruned checkpoint with spectral dampening. Still a very intense effect; may capture unintended ref/fl signatures that can cause drift at high strengths — use 0.5 or lower to taste. TenStrip will delete and defer if WarmBloodAban releases an official LoRA. Two ranks. MiniMax H3 Community License. (625 MB r64-fro95 · 1.19 GB 128spect-fro95)
 
 ### ▣ Experimental / Other
 
