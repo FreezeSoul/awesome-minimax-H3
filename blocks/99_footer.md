@@ -81,6 +81,8 @@
 [gh-EllaPriest45]: https://img.shields.io/badge/EllaPriest45-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-nikdevs]: https://img.shields.io/badge/nikdevs-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-mvp--lab]: https://img.shields.io/badge/mvp--lab-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-HardGravy2]: https://img.shields.io/badge/HardGravy2-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Alissonerdx]: https://img.shields.io/badge/Alissonerdx-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 
 [ltype-character]: https://img.shields.io/badge/Character-0077cc?style=flat-square
 [ltype-style]: https://img.shields.io/badge/Style-6f42c1?style=flat-square
