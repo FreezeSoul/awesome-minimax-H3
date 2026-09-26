@@ -92,6 +92,8 @@
 [gh-neph1]: https://img.shields.io/badge/neph1-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-LiseTY]: https://img.shields.io/badge/LiseTY-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-ostris]: https://img.shields.io/badge/ostris-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-akatz--ai]: https://img.shields.io/badge/akatz--ai-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Veda--Sparse]: https://img.shields.io/badge/Veda--Sparse-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-RunningHubAI]: https://img.shields.io/badge/RunningHubAI-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-Cseti]: https://img.shields.io/badge/Cseti-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-Felldude]: https://img.shields.io/badge/Felldude-lightgrey?style=flat-square&logo=huggingface&logoColor=white

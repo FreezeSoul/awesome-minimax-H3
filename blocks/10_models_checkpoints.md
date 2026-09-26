@@ -487,6 +487,16 @@ Civitai-backup repo of **merged / pre-quantized full checkpoints** — mostly co
 * **[drbaph/vdn-minimax-h3-int8-convrot-comfyui](https://huggingface.co/drbaph/vdn-minimax-h3-int8-convrot-comfyui)** — pre-quantized `stage-dmd-step-250` INT8 ConvRot (Comfy Kitchen) for ComfyUI-VDN-H3: `linear_branch/model_int8_convrot_comfyui.safetensors` (2.30 GB int8, was 4.28 GB bf16) + `adapters/default` (334 MB) + `adapters/turbo` (851 MB); stage ~3.4 GB. Requires ComfyUI-VDN-H3 v1.3.0+.
 * **[Saganaki22/ComfyUI-VDN-H3](https://github.com/Saganaki22/ComfyUI-VDN-H3)** — native ComfyUI node (port of OpenVDN, not a fork) that applies the VDN hybrid-attention patches as runtime model patches; no ComfyUI core changes, zero new deps. See the node table.
 
+#### Veda Sparse Attention (Miowtion)
+
+**Veda** — a distilled **sparse-attention tile-score predictor** for MiniMax-H3 from the Miowtion project (ICML 2026, [arXiv 2605.30325](https://arxiv.org/abs/2605.30325)). Per layer and per head it scores 128-token key tiles against query tiles and keeps only **10%**, so attention runs block-sparse instead of dense. It replaces attention block selection *only* — denoiser, schedule and VAE are untouched, and it is orthogonal to the few-step LoRA it runs under. Runtime path is [Veda-Sparse/Miowtion](https://github.com/veda-sparse/Miowtion) (there is no ComfyUI loader). The predictor file also carries its **tile plans** in `__metadata__` — 12 geometries (16:9 / 9:16 / 4:3 / 1:1 × latent_t 37 / 72 / 102 = 5.17 / 10.1 / 14.4 s); predictor and plan must ship in the same file, a mismatched pairing is silent. Weights are fp8 e4m3 with per-head amax scales, dequantized to bf16 at load (top-k selection is invariant to per-row rescaling, so fp8 vs bf16 moves recall by 2e-5). Preview: 600 updates on 5.17 s clips only.
+
+Measured on an RTX 4090 (weights offloaded to host, FL2VA + 8-step Turbo LoRA, 20 held-out prompts, keep 0.1, step 0 excluded): **2.24× end-to-end / 5.92× attention** overall, and the gain grows with clip length — 1.57× at 5.17 s, 2.21× at 10.1 s, 2.76× at 14.4 s (best single clip 3.08× / 6.87×), because attention is 42% of a dense step at the short end but 71% at the long one. Sparse output is *not* bit-exact against dense, and at a 10% keep ratio even an oracle mask recovers only ~0.63 of the attainable attention mass. **T2VA only.**
+
+| Predictor | Precision | Size | Download |
+| :--- | :---: | :---: | :--- |
+| T2VA Veda 8-NFE · 600-step preview | ![fp8][badge-fp8] | 263 MB | [![][gh-Veda--Sparse]](https://huggingface.co/Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview/resolve/main/minimax_h3_t2va_veda_8nfe_600step_preview_fp8.safetensors) |
+
 #### TaoMate-H3 (Alibaba TaoLive, streaming)
 
 **TaoMate-H3** — low-latency **streaming audio-video generation runtime** from the Alibaba TaoLive AIGC Team, built on MiniMax-H3 FL2VA. Generates synchronized audio and video in small chunks (three Stage3 denoising intervals per chunk) with low per-chunk latency, and supports continuous long-form generation at 480p/768p/1080p — clean KV cache + integrated audio guidance preserve identity, voice, and motion across prompt boundaries (one prompt per 5-second block via `--prompt-json`). Single-node inference on Linux + Hopper GPUs (4 or 8 × H20 96 GB validated; TP2 + Ulysses sequence parallelism).
